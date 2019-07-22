@@ -1,0 +1,20 @@
+<div class="main_question_div">
+<div *ngIf="isAnswerCorrect != false && !isComplete" class="question_name"><span>{{questionNumber}}. </span>
+  {{currentQuestion.name}}                        <span>Time Left:{{timer}}</span>
+</div>
+<br>
+<div *ngIf="isAnswerCorrect != false && !isComplete" class="options">
+  <div *ngFor="let opt of currentQuestion.options">
+ <input class="option" type="radio" [(ngModel)]=clearOption name="option"   
+   [value]="opt" (change)="onSelectionChanged(opt)"> {{ opt}}
+  </div>
+</div>
+<div style="display: flex;justify-content: center;">
+<div style="text-align: center;" *ngIf="isAnswerCorrect != null" 
+[ngStyle]="{'color': isAnswerCorrect? 'green':'red'}" > {{isAnswerCorrect ? 'Correct' : 'Wrong'}}
+</div>
+<div style="margin-left:5px;text-align: center; color: green;">
+  Won : {{amountWon}}
+</div>
+</div>
+</div>

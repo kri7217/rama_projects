@@ -1,0 +1,16 @@
+.option{
+    border:1px solid black;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.options{
+    display: inline-flex;
+
+}
+
+.main_question_div{
+    display:flex;
+flex-direction: column;
+align-items: center;
+}
